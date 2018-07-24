@@ -1,0 +1,31 @@
+body {
+  height: 100vh;
+}
+
+.header{
+  margin: 60px auto 50px;
+  text-align: center;
+}
+
+.row {
+  justify-content: center;
+}
+
+.login-form-wrapper,
+.block-404-wrapper {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.block-404 img {
+  max-width: 510px;
+}
+
+input#breaker_code {
+  margin: 15px 0;
+  text-align: center;
+}

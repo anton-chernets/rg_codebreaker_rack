@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+%html
+  %head
+    %title Codebreaker Rack App
+    %link{ rel: 'shortcut icon', href: 'img/favicon/favicon.ico', type: 'image/x-icon' }
+    %link{ rel: 'stylesheet', href: '/stylesheets/bootstrap.min.css', type: 'text/css' }
+    %link{ rel: 'stylesheet', href: '/stylesheets/main.css', type: 'text/css' }
+  %body
+    .container
+      .row
+        .col
+          .header
+            %h4 Codebreaker App
+      .row
+        .col.text-center
+          %h5 Statistics:
+          %table{ id: 'game_log', class: 'table table-striped  text-center' }
+            %thead
+              %tr
+                %th{ scope: 'col'} Name</th>
+                %th{ scope: 'col'} Score</th>
+                %th{ scope: 'col'} Date
+            %tbody
+              - @scores.each do |record|
+                %tr
+                  %td= record[:name]
+                  %td= record[:score]
+                  %td= record[:date]
+          %br
+          %p
+            %a{ href: '/', class: 'btn btn-secondary btn-block' }
+              Back
