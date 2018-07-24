@@ -20,7 +20,7 @@ rspec --init
 gem install codebreaker
 gem install haml
 gem install rack
-Rackup
+rackup
 ``````````````````````
 в новой вкладке терминала из корневой папки где config.ru
 ``````````````````````
