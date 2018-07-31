@@ -68,7 +68,10 @@ class App
   end
 
   def saves_result
-    File.open(@game_data_file_path, 'w') { |f| f.write YAML.dump(game&.preparation_information) }
+    scores_log = YAML.load_file(File.open(@game_data_file_path, 'r')) || []
+    prepared_information = game&.preparation_information
+    scores_log.push(prepared_information.first)
+    File.open(@game_data_file_path, 'w') { |f| f.write YAML.dump(scores_log.compact) }
     @request.session.clear
     redirect_to '/scores'
   end
