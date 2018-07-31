@@ -6,12 +6,12 @@
         %th{ scope: 'col'} Code</th>
         %th{ scope: 'col'} Matching
     %tbody
+      -unless hint == nil
+        %tr
+          %td= hint
+          %td= 'Your hint'
       -unless guess == nil
         - game_log.reverse.each do |line|
           %tr
             %td= line.first
             %td= line.last
-      -unless hint == nil
-        %tr
-          %td= hint
-          %td= 'Your hint'
