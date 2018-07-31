@@ -1,0 +1,16 @@
+.row
+  .col
+    .login-form-wrapper
+      %form{ class: 'login-form', action: '/', method: 'post' }
+        .form-group.text-center
+          %h4 Codebreaker App
+          %input{ class: 'form-control',
+                  type: 'text',
+                  name: 'player_name',
+                  placeholder: 'Your name',
+                  pattern: '^.*\S.*$',
+                  autofocus: 'true',
+                  required: 'true' }
+          %small{ id: 'loginHelp', class: 'form-text text-muted' }
+        %button{ class: 'btn btn-success btn-block', type: 'submit' }
+          Start

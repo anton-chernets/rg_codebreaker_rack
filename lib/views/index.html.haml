@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+%html
+  %head
+    %title Codebreaker Rack App
+    %link{ rel: 'shortcut icon', href: 'img/favicon/favicon.ico', type: 'image/x-icon' }
+    %link{ rel: 'stylesheet', href: '/stylesheets/bootstrap.min.css', type: 'text/css' }
+    %link{ rel: 'stylesheet', href: '/stylesheets/main.css', type: 'text/css' }
+  %body
+    .container
+      - if player_name
+        .row
+          .col
+            .header
+              %h4 Codebreaker App
+        - if game_over != nil
+          = render 'game_over'
+        - else
+          .row
+            .col
+              .row
+                = render 'game_form'
+          .row
+            .col
+              = render 'game_log'
+      - else
+        = render 'login_form'

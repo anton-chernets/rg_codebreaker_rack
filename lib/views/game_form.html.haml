@@ -1,0 +1,23 @@
+%form{ class: 'game-form', action: '/attempts', method: 'post' }
+  .form-group.text-center
+    .container
+      .row
+        .col
+          Guess code with number from 1 to 6
+          %input{ id: 'breaker_code',
+                  class: 'form-control',
+                  type: 'text',
+                  name: 'breaker_code',
+                  placeholder: '****',
+                  pattern: '^[1-6]{4}$',
+                  autofocus: 'true',
+                  required: 'true' }
+          %small{ id: 'gameHelp', class: 'form-text text-muted' }
+          .row
+            .col-6
+              %button{ type: 'submit', class: 'btn btn-secondary btn-block' }
+                Submit
+.container
+%form{ class: 'game-form', action: '/hint', method: 'get' }
+  %button{ type: 'submit', class: 'btn btn-secondary btn-block' }
+    Hint

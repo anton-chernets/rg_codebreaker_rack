@@ -1,0 +1,20 @@
+.row
+  .col.text-center
+    - if won != nil
+      %h5
+        Super game! You won,
+        %strong= player_name
+    - else
+      %h5
+        Sorry,
+        %strong= player_name
+        , but you lost :(
+
+%br
+.row
+  .col-3
+    %form{ id: 'save-form', action: '/save', method: 'get' }
+      %input{ class: 'btn btn-secondary btn-block', type: 'submit', value: 'Save results' }
+  .col-3
+    %form{ id: 'restart-form', action: '/again', method: 'get' }
+      %input{ class: 'btn btn-secondary btn-block', type: 'submit', value: 'Restart game' }
