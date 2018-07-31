@@ -43,7 +43,7 @@ class App
     result_guess = game&.submits_guess(guess)
     add_to_log(result_guess)
     if result_guess == true
-      self.won = 1 if result
+      self.won = 1
       self.game_over = 1
     elsif result_guess == false
       self.game_over = 1
